@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monday Schedule</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:
+        linear-gradient(rgba(10, 40, 35, 0.7), rgba(10, 40, 35, 0.7)),
+        url('https://assets.gamearena.gg/wp-content/uploads/2023/11/01141155/genshin-impact-venti-1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #e6fff9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: rgba(12, 50, 45, 0.85);
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    nav a:link {
+      color: #7fd2b3;
+    }
+
+    nav a:visited {
+      color: #49d4a6;
+    }
+
+    nav a:hover {
+      color: #b2ffe2;
+      text-shadow: 0 0 8px #a0ffd7;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      font-size: 1.1em;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0 10px;
+      font-size: 2em;
+      color: #dbfff2;
+      text-shadow: 2px 2px 6px #0d302a;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.4em;
+      color: #a4f5dc;
+      text-shadow: 0 0 8px rgba(128, 255, 216, 0.6);
+      letter-spacing: 1px;
+      margin: 5px 0;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 400;
+      color: #c6fff1;
+      text-shadow: 0 0 6px rgba(150, 255, 200, 0.4);
+      margin-bottom: 20px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 30px;
+      gap: 20px;
+      flex: 1;
+      background-color: rgba(10, 45, 40, 0.6);
+      border-top: 2px solid #47b99a;
+      border-bottom: 2px solid #47b99a;
+    }
+
+    .media-box {
+      flex: 1;
+      background-color: rgba(20, 80, 70, 0.8);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-align: left;
+      backdrop-filter: blur(5px);
+      overflow: auto;
+    }
+
+    .media-box img {
+      float: left;
+      width: 45%;
+      margin: 10px 15px 10px 0;
+      border-radius: 10px;
+    }
+
+    .media-box iframe {
+      float: left;
+      width: 50%;
+      height: 250px;
+      border-radius: 10px;
+      margin: 10px 15px 10px 0;
+    }
+
+    .media-box .caption {
+      overflow: hidden;
+      color: #dbfff6;
+      font-size: 0.9em;
+      text-align: justify;
+      line-height: 1.6;
+      margin-top: 5px;
+    }
+
+    table {
+      flex: 2;
+      border-collapse: collapse;
+      margin: 0 auto;
+      width: 100%;
+      background-color: rgba(20, 70, 60, 0.9);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: rgba(30, 130, 110, 0.9);
+      color: white;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: rgba(30, 90, 80, 0.8);
+      border-bottom: 2px solid rgba(20, 70, 60, 0.8);
+    }
+
+    tr:hover td {
+      background-color: rgba(45, 150, 120, 0.9);
+    }
+
+    .references {
+      background-color: rgba(20, 80, 70, 0.75);
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 15px;
+      width: 80%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-align: center;
+      backdrop-filter: blur(5px);
+      transition: 0.3s ease;
+    }
+
+    .references:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(120, 255, 210, 0.6);
+    }
+
+    a {
+      color: #3cbfaf;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:visited {
+      color: #3cbfaf;
+    }
+
+    a:hover {
+      color: #00ffd5;
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: rgba(10, 30, 25, 0.9);
+      text-align: center;
+      padding: 12px;
+      color: #a9ffe3;
+      font-size: 0.95em;
+      margin-top: auto;
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.5px;
+      border-top: 3px solid #4de6b3;
+    }
+
+    footer a:link {
+      color: #7dffd3;
+    }
+
+    footer a:visited {
+      color: #5ac5a6;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px #7dffd3, 0 0 12px #a9ffe6;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="https://raizaleigh-lelele.github.io/CS32ndQtrPort/public/index2.html">Home!</a>
+    <a href="https://windyy-ash.github.io/CS3_1stQtrPortfolio/public/sched.html">Friday Sched!</a>
+    <a href="https://github.com/RaizaLeigh-lelele/CS32ndQtrPort">My Repository!</a>
+  </nav>
+
+  <h1>Monday Schedule :[</h1>
+  <h2>Created by Ashwiwiwiwiwi (Rb28) and Raiza (Rb30) ♡</h2>
+  <h3>Oct 7, 2024</h3>
+
+  <div class="content">
+    <div class="media-box">
+      <h2>Image (っ'ヮ'c)</h2> 
+      <img src="https://media.discordapp.net/attachments/1163793039534333972/1427467232035995750/Screenshot_20251014_090440_Gallery.jpg" alt="Pic of me and ashwiiwiw">
+      <div class="caption">
+        <p>Me and Ash being our usual chaotic selves xD. We took this photo during CS class.. SIR HEAR ME OUT IT WAS DISMISSAL NA RIN!!!..</p>
+        <p>I miss Ash huhu. Everything was louder, messier, and way more fun when she is around.. why can't she just teleport to me or something.</p>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>Time</th>
+        <th>Subject</th>
+        <th>Mood..?</th>
+      </tr>
+      <tr><td>7:10 AM - 7:30 AM</td><td>Flag Ceremony</td><td>( ,,⩌'︿'⩌,,)</td></tr>
+      <tr><td>7:30 AM - 8:15 AM</td><td>Biology</td><td>(˚ ˃̣̣̥⌓˂̣̣̥ )</td></tr>
+      <tr><td>8:15 AM - 9:00 AM</td><td>Study Period</td><td>৻(  •̀ ᗜ •́  ৻)</td></tr>
+      <tr><td>9:00 AM - 9:10 AM</td><td>Break</td><td>◝(ᵔᗜᵔ)◜</td></tr>
+      <tr><td>9:10 AM - 9:55 AM</td><td>Statistics</td><td>(ᵕ • ᴗ •)</td></tr>
+      <tr><td>9:55 AM - 10:40 AM</td><td>Statistics</td><td>(ᵕ • ᴗ •)</td></tr>
+      <tr><td>10:40 AM - 11:25 AM</td><td>Filipino</td><td>(｡Ó﹏Ò｡)</td></tr>
+      <tr><td>11:25 AM - 12:10 PM</td><td>Filipino</td><td>(｡Ó﹏Ò｡)</td></tr>
+      <tr><td>12:10 PM - 12:20 PM</td><td>Break</td><td>◝(ᵔᗜᵔ)◜</td></tr>
+      <tr><td>12:20 PM - 1:05 PM</td><td>Lunch</td><td>（˶˃ ᵕ ˂˶）</td></tr>
+      <tr><td>1:05 PM - 1:50 PM</td><td>Values Education</td><td>( ｰ̀εｰ́ )</td></tr>
+      <tr><td>1:50 PM - 2:35 PM</td><td>Music</td><td>(* ' ﹃'*)</td></tr>
+      <tr><td>2:35 PM - 2:45 PM</td><td>Break</td><td>◝(ᵔᗜᵔ)◜</td></tr>
+      <tr><td>2:45 PM - 3:30 PM</td><td>Chemistry</td><td>(ᴗ˳ᴗ)ᶻ𝗓𐰁</td></tr>
+      <tr><td>3:30 PM - 4:15 PM</td><td>Chemistry</td><td>(ᴗ˳ᴗ)ᶻ𝗓𐰁</td></tr>
+    </table>
+
+    <div class="media-box">
+      <h2>Video (ദ്ദി˙ᗜ˙)</h2> 
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/watch?v=UaB7FoHitEw"
+        title="YouTube video" frameborder="0" allowfullscreen>
+      </iframe>
+      <div class="caption">
+        <p>This video brings back memories I didn't realize I already miss so so much; the laughter, the chaotic moments, and everything in between.</p>
+        <p>I miss him. I miss Ash. Things just really don't feel the same without them around.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="references">
+    <h2>References</h2>
+    <ul>
+      <li>Images used are from the video game <em>Genshin Impact</em> (HoYoverse, Cognosphere, miHoYo, 2021).</li>
+      <li>Emoticons are from <a href="https://emojidb.org/happy-emojis" target="_blank">EmojiDB</a>.</li>
+      <li>Youtube video are from <a href="https://www.youtube.com/@coolman_coffeedan" target="_blank">Channel Name</a> | <a href="https://www.youtube.com/watch?v=UaB7FoHitEw" target="_blank">Watch on YouTube</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    © 2025 Raiza Leigh A. Ybanez. All Rights Reserved.
+  </footer>
+</body>
+</html>
